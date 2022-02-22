@@ -3,7 +3,7 @@ import Link from "next/link";
 const Navbar = () => {
   const navLinks = [
     { page: "Home", href: "/" },
-    { page: "Our Story", href: "#" },
+    { page: "About", href: "#" },
   ];
 
   const NavElements = () => {
@@ -27,10 +27,10 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="mx-12 my-8 flex items-center justify-between lg:mx-40">
-        <Link href="/">
-          <div className="font-logo text-2xl">Blog </div>
-        </Link>
+      <div className="mx-10 my-8 flex items-center justify-between lg:mx-40">
+        <div className="font-logo text-2xl">
+          <Link href="/">Blog</Link>
+        </div>
         <NavElements />
       </div>
     </nav>
