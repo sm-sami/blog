@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 interface LayoutProps {
@@ -9,6 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div>
       <Navbar />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 };

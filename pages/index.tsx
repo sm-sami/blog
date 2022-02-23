@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import ArticleCard from "../components/ArticleCard";
 import TrendingArticles from "../components/TrendingArticles";
 
 const Home: NextPage = () => {
