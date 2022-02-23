@@ -9,7 +9,7 @@ const Navbar = () => {
   const NavElements = () => {
     return (
       <div className="flex items-center">
-        <div className="hidden md:flex">
+        <div className="hidden sm:flex">
           {navLinks.map((element, id) => (
             <div className="mx-3 text-xl font-bold">
               <Link key={id} href={element.href}>
@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="mx-10 my-8 flex items-center justify-between lg:mx-40">
-        <div className="font-logo text-2xl">
+        <div className="font-logo text-2xl font-bold">
           <Link href="/">Blog</Link>
         </div>
         <NavElements />

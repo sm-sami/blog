@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface ArticleProps {
   id: number;
   title: string;
@@ -6,8 +8,12 @@ interface ArticleProps {
 
 const ArticleCard = ({ id, title, children }: ArticleProps) => {
   return (
-    <div className="p-3 lg:p-5">
-      <div className="text-2xl font-bold">{title}</div>
+    <div className="m-3 lg:m-5">
+      <div className="text-2xl font-bold">
+        <Link key={id} href="#">
+          {title}
+        </Link>
+      </div>
       <p className="text-base text-gray-500">{children}</p>
     </div>
   );
