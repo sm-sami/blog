@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import TrendingArticles from "../components/TrendingArticles";
+import Articles from "../components/Articles";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,9 @@ const Home: NextPage = () => {
         </div>
         <div className="mt-5">
           <TrendingArticles />
+        </div>
+        <div className="mt-10 flex justify-center">
+          <Articles />
         </div>
       </div>
     </>
