@@ -10,8 +10,8 @@ const Footer = () => {
     <footer className="bg-black text-center text-lg font-bold text-white">
       <div className="flex justify-center py-3">
         {footerLinks.map((element, id) => (
-          <div className="mx-5">
-            <Link key={id} href={element.href}>
+          <div key={id} className="mx-5">
+            <Link href={element.href}>
               {element.page}
             </Link>
           </div>
