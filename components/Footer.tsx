@@ -11,9 +11,7 @@ const Footer = () => {
       <div className="flex justify-center py-3">
         {footerLinks.map((element, id) => (
           <div key={id} className="mx-5">
-            <Link href={element.href}>
-              {element.page}
-            </Link>
+            <Link href={element.href}>{element.page}</Link>
           </div>
         ))}
       </div>
