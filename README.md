@@ -42,4 +42,4 @@ To learn more, take a look at the following resources:
 
 - [TailwindCSS Documentation](https://tailwindcss.com/) - learn about TailwindCSS
 
-- [TypeSctipt Doccumentation](https://www.typescriptlang.org/docs/) - learn more about TypeScript
+- [TypeScript Doccumentation](https://www.typescriptlang.org/docs/) - learn more about TypeScript
