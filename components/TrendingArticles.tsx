@@ -10,18 +10,18 @@ const TrendingArticles = () => {
   const TrendingArticleCard = ({ id, title, children }: ArticleProps) => {
     return (
       <div className="m-3 lg:m-5">
-        <div className="text-2xl font-bold">
+        <div className="text-lg font-bold sm:text-2xl">
           <Link key={id} href="#">
             {title}
           </Link>
         </div>
-        <p className="text-base text-gray-500">{children}</p>
+        <p className="text-sm text-gray-500 sm:text-base">{children}</p>
       </div>
     );
   };
 
   return (
-    <div className="">
+    <div>
       <h1 className="text-xs font-bold">TRENDING RIGHT NOW</h1>
       <div className="grid sm:grid-cols-2 xl:grid-cols-3">
         {[...Array(6)].map((_, id) => (
