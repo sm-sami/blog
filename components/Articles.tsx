@@ -5,6 +5,7 @@ const Articles = () => {
     <div className="flex flex-col gap-10">
       {[...Array(10)].map((_, id) => (
         <ArticleCard
+          key={id}
           id={id}
           author="John Doe"
           blog="Designr"
