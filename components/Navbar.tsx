@@ -11,7 +11,10 @@ const Navbar = () => {
       <div className="flex items-center">
         <div className="hidden sm:flex">
           {navLinks.map((element, id) => (
-            <div key={id} className="mx-3 text-xl font-bold">
+            <div
+              key={id}
+              className="mx-3 text-xl font-bold transition-all duration-300 hover:-translate-y-1"
+            >
               <Link href={element.href}>{element.page}</Link>
             </div>
           ))}
