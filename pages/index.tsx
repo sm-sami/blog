@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import TrendingArticles from "../components/TrendingArticles";
 import Articles from "../components/Articles";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ articles }: any) => {
   return (
     <>
       <div className="mx-8 my-10 lg:mx-40 lg:my-10">
@@ -13,14 +13,27 @@ const Home: NextPage = () => {
           From amazing writers around the world
         </div>
         <div className="mt-5">
-          <TrendingArticles />
+          <TrendingArticles articles={articles} />
         </div>
-        <div className="mt-10 flex justify-center">
-          <Articles />
+        <div className="mt-10 flex justify-start">
+          <Articles articles={articles} />
         </div>
       </div>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?_limit=10`
+  );
+  const articles = await res.json();
+
+  return {
+    props: {
+      articles,
+    },
+  };
 };
 
 export default Home;

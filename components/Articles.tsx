@@ -1,18 +1,29 @@
 import { ArticleCard } from ".";
 
-const Articles = () => {
+export interface ArticleSchema {
+  id: number;
+  userId: number;
+  title: string;
+  body: string;
+}
+
+export interface ArticleProps {
+  articles: ArticleSchema[];
+}
+
+const Articles = ({ articles }: ArticleProps) => {
   return (
     <div className="flex flex-col gap-10">
-      {[...Array(10)].map((_, id) => (
+      {articles.map((article: ArticleSchema, idx: number) => (
         <ArticleCard
-          key={id}
-          id={id}
+          key={idx}
+          id={article.id}
           author="John Doe"
           blog="Designr"
-          title="Lorem ipsum dolor sit"
+          title={article.title}
           date="Feb 24"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          {article.body}
         </ArticleCard>
       ))}
     </div>
