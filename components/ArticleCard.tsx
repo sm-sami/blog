@@ -19,7 +19,7 @@ const ArticleCard = ({
 }: ArticleProps) => {
   return (
     <div className="flex gap-4">
-      <div className="flex max-w-lg flex-col">
+      <div className="flex w-[34vw] flex-col">
         <div className="text-xs font-bold sm:text-sm">
           {blog ? (
             <div>
@@ -40,7 +40,7 @@ const ArticleCard = ({
       <img
         src="/placeholder.jpg"
         alt="placeholder image"
-        className="h-20 w-28 rounded-xl object-contain sm:h-28 sm:w-48 md:rounded-lg"
+        className="h-20 w-28 object-contain sm:h-28 sm:w-48"
       />
     </div>
   );
