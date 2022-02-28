@@ -2,21 +2,45 @@ import Link from "next/link";
 import { ArticleSchema, ArticleProps } from "./Articles";
 
 const TrendingArticles = ({ articles }: ArticleProps) => {
-  interface ArticleCardProps {
+  interface TrendingArticleCardProps {
     id: number;
+    author: string;
+    blog?: string;
     title: string;
-    children: React.ReactNode;
+    date: string;
   }
 
-  const TrendingArticleCard = ({ id, title, children }: ArticleCardProps) => {
+  const TrendingArticleCard = ({
+    id,
+    author,
+    blog,
+    title,
+    date,
+  }: TrendingArticleCardProps) => {
     return (
-      <div className="mx-3 lg:mx-5">
-        <div className="text-lg font-bold sm:text-2xl">
-          <Link key={id} href="#">
-            {title}
-          </Link>
+      <div className="flex gap-x-10">
+        <div className="max-w-[20px] select-none text-3xl font-bold text-gray-300">
+          0{id}
         </div>
-        <p className="text-sm text-gray-500 sm:text-base">{children}</p>
+        <div className="flex flex-col">
+          <div>
+            {blog ? (
+              <div className="text-xs font-bold">
+                <Link href="#">{author}</Link>{" "}
+                <span className="font-normal text-gray-500">in</span>{" "}
+                <Link href="#">{blog}</Link>
+              </div>
+            ) : (
+              <Link href="#">{author}</Link>
+            )}
+          </div>
+          <div className="text-lg font-bold leading-tight">
+            <Link key={id} href="#">
+              {title}
+            </Link>
+          </div>
+          <div className="mt-1 text-xs text-gray-500">{date}</div>
+        </div>
       </div>
     );
   };
@@ -24,15 +48,16 @@ const TrendingArticles = ({ articles }: ArticleProps) => {
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-xs font-bold">TRENDING RIGHT NOW</h1>
-      <div className="gapx-x-5 grid gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {articles.slice(0, 6).map((article: ArticleSchema, idx: number) => (
-          <div key={idx} className="flex flex-row items-start">
-            <div className="w-28 select-none text-center text-3xl font-bold text-gray-300">
-              0{article.id}
-            </div>
-            <TrendingArticleCard id={article.id} title={article.title}>
-              {article.body}
-            </TrendingArticleCard>
+          <div key={idx}>
+            <TrendingArticleCard
+              id={article.id}
+              author="John Doe"
+              blog="Designr"
+              title={article.title}
+              date="Feb 27"
+            />
           </div>
         ))}
       </div>
