@@ -19,7 +19,7 @@ const ArticleCard = ({
 }: ArticleProps) => {
   return (
     <div className="flex gap-4">
-      <div className="flex w-[34vw] flex-col">
+      <div className="flex w-[50vw] flex-col xl:w-[34vw]">
         <div className="text-xs font-bold sm:text-sm">
           {blog ? (
             <div>
@@ -31,10 +31,12 @@ const ArticleCard = ({
             <Link href="#">{author}</Link>
           )}
         </div>
-        <div className="text-lg font-bold sm:text-3xl">
+        <div className="text-xl font-bold sm:text-3xl">
           <Link href="#">{title}</Link>
         </div>
-        <p className="text-sm text-gray-500 sm:text-base">{children}</p>
+        <p className="truncate text-sm text-gray-500 sm:text-base">
+          {children}
+        </p>
         <div className="mt-2 text-xs text-gray-500">{date}</div>
       </div>
       <img
